@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		     #attach_img{width:560px;}
+		     .attach_img_top{position:relative;height:250px;
+		    }
+			.attach_form{
+			   position:absolute;
+				top:0;
+				left:0;
+				
+			}
+			.attach_display{
+				position:absolute;
+				top:0;
+				right:0;
+				
+			}
+			.attach_btns{margin:auto;padding:auto;}
+			
+			#attach_img input{margin-bottom:13px}
+			.attach_img_op{width: 80px;display:inline-block;}
+		</style>
+	</head>
+	<body>
+		<!--<ul id='attaches_ul'></ul>-->
+		<div id=attach_img>
+			<div class='attach_img_top'>
+			<div class='attach_form'>
+				<!--<span class='attach_img_op'>附件编号:</span><input class='attach_img_form'type="" name="" id="img_id" value="" /></br>-->
+				<!--<span class='attach_img_op'>类型:</span><input type="" name="img_type" id="img_type" value="" /></br>-->
+				<span class='attach_img_op'>标题:</span><input class='attach_img_form'type="" name="img_title" id="img_title" value="" /></br>
+				<span class='attach_img_op'>文件地址:</span><input class='attach_img_form'type="" name="img_src" id="img_src" value="" /></br>
+				<span class='attach_img_op'>排版方式:</span>
+				<form id='attach_img_radio'>
+				<input type="radio" name='align' value='left'/> left
+				<input type="radio" name='align'value='right' /> right
+				<input type="radio" name='align' value='center'/> center
+				<input type="radio" name='align' value='left_float'/> left_float
+				<input type="radio" name='align' value='right_float'/> right_float
+				</form>
+				</br>
+				<span class='attach_img_op'>宽度:</span><input class='attach_img_form'type="" name="img_width" id="img_width" value="" />
+				<select id='attach_img_width'>
+				<option value='px'>像素</option>
+				<option value='%'>百分比</option>
+				</select>
+				</br>
+				<span class='attach_img_op'>高度:</span><input class='attach_img_form'type="" name="img_height" id="img_height" value="" />
+				<select id='attach_img_height'>
+				<option value='px'>像素</option>
+				<option value='%'>百分比</option>
+				</select>
+				</br>
+			</div>
+			
+			<div class='attach_display'>
+				<p class='img_json'>图片附件json定义如下</p>
+				<!--<p class='jsondef'></p>-->
+				<textarea rows="6" cols="20"  readonly="readonly" style='resize:none'></textarea>
+			</div>
+			</div>
+			
+			<div class='attach_btns'>
+				请先生成json再执行预览效果<br>
+				
+				<div style='margin:auto'><button>生成json</button><button>预览效果</button><button>确定</button></div>
+			</div>
+		</div>
+	
+		
+		<!--<img src="catehead4.png" style="width:100px;height:100px;" class="attach_img_center">-->
+		<script src="attach_img.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

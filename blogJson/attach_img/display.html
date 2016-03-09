@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.attach_img_parent{
+				position:relative;
+			}
+			.attach_img_left{ position:absolute;
+				top:0;
+				left:0;}
+			.attach_img_right{
+				position:absolute;
+				top:0;
+				right:0;
+			}
+			.attach_img_center{
+				margin:auto;
+				display:block;
+			}
+			.attach_img_float_left{float:left;}
+			.attach_img_float_right{float:right;}
+		    .attach_img_display_title{position:absolute;top:0;left:0;background-color: #ccc;z-index: 1;}
+		
+		</style>
+		
+		<script>
+			
+		window.onload=function(){
+			
+		//alert("a");
+		var urlinfo = decodeURI(window.location.href);  
+		//获取url
+		var jsonstr=urlinfo.split("?")[1];
+		var imgjson=JSON.parse(jsonstr);
+
+		var div = document.createElement('div'),p=document.createElement('p');
+      
+		div.innerHTML = '<img src=' + imgjson.src + ' style="width:' + imgjson.width + ";" + 'height:' + imgjson.height + '"' + '>';
+		var img = div.querySelector('img');
+		document.querySelector('.attach_img_display').appendChild(div);
+		//div.appendChild(p);
+		/*p.innerHTML=vals[2];
+		p.className='attach_img_display_title';*/
+
+		switch (imgjson.align) {
+			case 'left':div.className='attach_img_parent';
+						            img.className='attach_img_left';
+						        
+						            div.style.height=imgjson.height;
+						            break;
+						case 'right':   div.className='attach_img_parent';
+						                img.className='attach_img_right';
+						               
+						                 div.style.height=imgjson.height;
+						                break;   
+						case 'center':img.className='attach_img_center';
+						
+						             break;         
+						case 'left_float':img.className='attach_img_float_left';
+						                  break;
+						case 'right_float':img.className='attach_img_float_right';
+						                  break;
+		}
+		}
+		
+		</script>
+	</head>
+	<body>
+		
+		<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
+									pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+							
+	    
+		<div class='attach_img_display'></div>
+		<p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma
+									pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+							
+	</body>
+	
+</html>
