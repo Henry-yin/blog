@@ -1,3 +1,6 @@
+/**
+ * Created by dell on 2015/12/10.
+ */
 
 function hasClass(ele,cls) {
     return ele.className.match(new RegExp('(\\s|^)'+cls+'(\\s|$)'));
