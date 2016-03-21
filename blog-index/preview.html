@@ -1,0 +1,106 @@
+<!--Coded By Henry-yin-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.blog_preview {
+				width: 720px;
+				margin: 0 auto;
+				//text-align: center;
+			}
+			
+			.hr {
+				width: 550px;
+				margin: 0 auto;
+				height: 1px;
+				background: #CCCCCC;
+			}
+			
+			.attach_title {
+				position: relative;
+				top: 55px;
+				left: 100px;
+			}
+			
+			.attach_title h6 {
+				margin-bottom: 0;
+				color: #34ceff;
+			}
+			
+			.time {
+				margin-left: 30px;
+				color: #CCCCCC;
+			}
+			
+			.date {
+				font-size: 10px;
+				width: 50px;
+				color: #ccc;
+				margin-bottom: 5px;
+			}
+			
+			.name {
+				position: relative;
+				top: 5px;
+				left: 100px;
+				height: 25px;
+				line-height: 25px;
+			}
+			
+			.name a {
+				color: #34ceff;
+				text-decoration: none;
+			}
+			
+			.keywords {
+				position: relative;
+				bottom: 40px;
+				float: right;
+				right: 90px;
+				font-size: 12px;
+				color: #CCCCCC;
+			}
+		</style>
+		<script>
+			var month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+			window.onload = function() {
+				var urlinfo = decodeURI(window.location.href);
+				var jsonstr = urlinfo.split("?")[1];
+				var blogjson = JSON.parse(jsonstr);
+				var div = document.querySelector('.blog_preview');
+				div.querySelector('h2').innerHTML = blogjson.title;
+				div.querySelector('h6').innerHTML = blogjson.category;
+				var time = new Date(blogjson.time);
+				var p = div.querySelector('.time').querySelectorAll('p');
+				p[0].innerHTML = month[time.getMonth()] + ' ' + time.getDate();
+				p[1].innerHTML = time.getFullYear();
+				div.querySelector('a').innerHTML = blogjson.author;
+				div.querySelector('.keywords').querySelector('.kw').innerHTML = blogjson.keywords;
+			}
+		</script>
+
+	</head>
+
+	<body>
+
+		<div class="blog_preview">
+			<div class="attach_title">
+				<h6>副标题</h6>
+				<h2>正标题</h2>
+			</div>
+			<div class="time">
+				<p class="date">January 6</p>
+				<p>2016</p>
+			</div>
+			<div class="keywords">
+				<span>关键字：</span>
+				<span class="kw">keywords</span>
+			</div>
+			<div class="hr"></div>
+			<span class="name">by<a href="#">Joe</a></span>
+		</div>
+	</body>
+
+</html>

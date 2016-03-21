@@ -1,3 +1,4 @@
+<!--Coded By Henry-yin-->
 <!DOCTYPE html>
 <html>
 
@@ -5,10 +6,11 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<style>
-			#blogJson{
+			#blogJson {
 				width: 560px;
 				position: relative;
 			}
+			
 			#button {
 				position: absolute;
 				top: 0;
@@ -43,10 +45,14 @@
 				<span>作者：</span>
 				<input type="text" placeholder="author" />
 				<span>时间：</span>
-				<input type="text" placeholder="time" />
+				<select id="selYear"></select>
+				<select id="selMonth"></select>
+				<select id="selDay"></select>
+				<br />
+				<br />
 				<span>博文分类：</span>
 				<input type="text" placeholder="category" />
-				<span>博文关键词数组：</span>
+				<span>博文关键词：</span>
 				<input type="text" placeholder="keywords" />
 				<button>json定义</button>
 				<button>预览</button>
@@ -54,9 +60,10 @@
 			</div>
 			<div id="showJson">
 				<p>博客配置json定义如下</p>
-				<textarea rows="10" cols="20"  readonly="readonly" style='resize:none'></textarea>
+				<textarea rows="10" cols="20" readonly="readonly" style='resize:none'></textarea>
 			</div>
 		</div>
+
 		<script type="text/javascript" src="blog_index.js"></script>
 
 	</body>
